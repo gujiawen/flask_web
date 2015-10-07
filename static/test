@@ -1,0 +1,11 @@
+#!/bash/bin
+count=`ls Uploads/ | wc -l`
+if [ "$count" -gt "0" ];
+then 
+   echo $count
+   mv Uploads/* tmp/*
+   filename='ls tmp/'
+else
+   echo "file 2"
+fi
+
