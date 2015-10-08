@@ -1,85 +1,61 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>MediaLab</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-
-        <link rel="stylesheet" href="{{ url_for('.static',filename='css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ url_for('.static',filename='css/icomoon-social.css') }}">
-        <link href="{{ url_for('.static',filename='css/website.css') }}" rel='stylesheet' type='text/css'>
-        <link rel="shortcut icon" href="{{ url_for('.static', filename='MediaLab.png') }}" type="image/x-icon"/>
-
-        <link rel="stylesheet" href="{{ url_for('.static',filename='css/leaflet.css') }}" />
-        <!--[if lte IE 8]>
-            <link rel="stylesheet" href="css/leaflet.ie.css" />
-        <![endif]-->
-        <link rel="stylesheet" href="{{ url_for('.static',filename='css/main.css') }}">
-
-        <script src="{{ url_for('.static',filename='js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-        
-
-        <!-- Navigation & Logo-->
-        <div class="mainmenu-wrapper">
-            <div class="container">
-                <div class="menuextras">
-                    <div class="extras">
-                        <ul>
-                            <!--li><a href="page-login.html">Login</a></li-->
-                        </ul>
-                    </div>
-                </div>
-                <nav id="mainmenu" class="mainmenu">
-                    <ul>
-                        <li class="logo-wrapper"><a href="/"><img src="{{ url_for('.static',filename='img/logo.png') }}" alt="MediaLab"></a></li>
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li  class="active">
-                            <a href="/features">Features</a>
-                        </li>
-                        <li>
-                            <a href="/">Product</a>
-                        </li>
-                        <li>
-                            <a href="/contact">Contact us</a>
-                        </li>
-                    </ul>
-                </nav>
+{% extends "base.html" %}
+{% extends "navbar" %}
+<!-- Navigation & Logo-->
+<div class="mainmenu-wrapper">
+    <div class="container">
+        <div class="menuextras">
+            <div class="extras">
+                <ul>
+                    <!--li><a href="page-login.html">Login</a></li-->
+                </ul>
             </div>
         </div>
-        <div class="section section-breadcrumbs">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1>Download</h1>
-                    </div>
+        <nav id="mainmenu" class="mainmenu">
+            <ul>
+                <li class="logo-wrapper"><a href="/"><img src="{{ url_for('.static',filename='img/logo.png') }}" alt="MediaLab"></a></li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li  class="active">
+                    <a href="/features">Features</a>
+                </li>
+                <li>
+                    <a href="/">Product</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Download</h1>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+ <div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="basic-login">
+                    <a href="{{ url_for('.static', filename='download/medialab.ts') }}" style="font-size:20px">Download it!</a>
                 </div>
             </div>
         </div>
-         
+    </div>
+</div>
 
-         <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3">
-                        <div class="basic-login">
-                            <a href="{{ url_for('.static', filename='download/medialab.ts') }}" style="font-size:20px">Download it!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{% endblock %}
         
         
 

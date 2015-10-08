@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+    {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MediaLab</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="{{ url_for('.static',filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('.static',filename='css/icomoon-social.css') }}">
+        <link href="{{ url_for('.static',filename='css/website.css') }}" rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{{ url_for('.static',filename='css/leaflet.css') }}" />
+        <link rel="shortcut icon" href="{{ url_for('.static', filename='MediaLab.png') }}" type="image/x-icon"/>
+        <link rel="stylesheet" href="{{ url_for('.static',filename='css/leaflet.css') }}" />
+		<!--[if lte IE 8]>
+		    <link rel="stylesheet" href="css/leaflet.ie.css" />
+		<![endif]-->
+		<link rel="stylesheet" href="{{ url_for('.static',filename='css/main.css') }}">
+
+        <script src="{{ url_for('.static',filename='js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+    {% endblock %}
+    </head>
+    <body>
+    	{% block body %}
+    	{% block navbar %}
+        <!-- Navigation & Logo-->
+        <div class="mainmenu-wrapper">
+	        <div class="container">
+	        	<div class="menuextras">
+					<div class="extras">
+						<ul>
+			        		<!--li><a href="page-login.html">Login</a></li-->
+			        	</ul>
+					</div>
+		        </div>
+		        <nav id="mainmenu" class="mainmenu">
+					<ul>
+						<li class="logo-wrapper"><a href="/"><img src="{{ url_for('.static',filename='img/logo.png') }}" alt="MediaLab"></a></li>
+						<li class="active">
+							<a href="/">Home</a>
+						</li>
+						<li>
+							<a href="/features">Features</a>
+						</li>
+						<li>
+							<a href="/">Product</a>
+						</li>
+						<li>
+							<a href="/contact">Contact us</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		{% endblock %}
+
+		{% block content %}
+        <!-- Homepage Slider -->
+        <div class="homepage-slider">
+        	<div id="sequence">
+				<ul class="sequence-canvas">
+					<!-- Slide 1 -->
+					<li class="bg4">
+						<!-- Slide Title -->
+						<h2 class="title">4K Realtime</h2>
+						<!-- Slide Text -->
+						<h3 class="subtitle">Brilliant HEVC software Live 4K60 encoder/Transcoder</h3>
+						<!-- Slide Image -->
+						<img class="slide-img" src="{{ url_for('.static',filename='img/homepage-slider/slide.png') }}" alt="Slide 1" />
+					</li>
+					<!-- End Slide 1 -->
+					<!-- Slide 2 -->
+					<li class="bg3">
+						<!-- Slide Title -->
+						<h2 class="title">Powerful and Faster</h2>
+						<!-- Slide Text -->
+						<h3 class="subtitle">
+							<li>Fastest in broadcast-grade encoding/transcoding.</li><br/>
+							<li>Less hardware, lower cost, and painless maintenance.</li>
+						</h3>
+						<!-- Slide Image -->
+						<img class="slide-img" src="{{ url_for('.static',filename='img/homepage-slider/slide2.png') }}" alt="Slide 2" />
+					</li>
+					<!-- End Slide 2 -->
+					<!-- Slide 3 -->
+					<li class="bg2">
+						<!-- Slide Title -->
+						<h2 class="title">Peerless flexibility</h2>
+						<!-- Slide Text -->
+						<h3 class="subtitle">
+							<li>Introducing new channels and live broadcasting in hours, not days</li><br/>
+							<li>OTT Cloud supported</li><br/>
+							<li>Upgrade from SD to HD without changing your existing Internet infrastructure</li>
+
+						</h3>
+						<!-- Slide Image -->
+						<img class="slide-img" src="{{ url_for('.static',filename='img/homepage-slider/slide3.png') }}" alt="Slide 3" />
+					</li>
+					<!-- End Slide 3 -->
+				</ul>
+				<div class="sequence-pagination-wrapper">
+					<ul class="sequence-pagination">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</div>
+			</div>
+        </div>
+        <!-- End Homepage Slider -->
+
+		<!-- Press Coverage -->
+        <div class="section">
+	    	<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<div class="in-press press-wired">
+							<a href="#">Sentence1</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="in-press press-mashable">
+							<a href="#">Sentence2</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="in-press press-techcrunch">
+							<a href="#">Sentence3</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Press Coverage -->
+
+		<!-- Services -->
+        <div class="section">
+	        <div class="container">
+	        	<div class="row">
+	        		<div class="col-md-4 col-sm-6">
+	        			<div class="service-wrapper">
+		        			<img src="{{ url_for('.static',filename='img/service-icon/diamond.png') }}" alt="Service 1">
+		        			<h3>Events</h3>
+		        			<p>We attended IBC two weeks ago...</p>
+		        			<a href="#" class="btn">Read more</a>
+		        		</div>
+	        		</div>
+	        		<div class="col-md-4 col-sm-6">
+	        			<div class="service-wrapper">
+		        			<img src="{{ url_for('.static',filename='img/service-icon/ruler.png') }}" alt="Service 2">
+		        			<h3>Specification</h3>
+		        			<p>In the page, you can see the sepcification here.</p>
+		        			<a href="#" class="btn">Read more</a>
+		        		</div>
+	        		</div>
+	        		<div class="col-md-4 col-sm-6">
+	        			<div class="service-wrapper">
+		        			<img src="{{ url_for('.static',filename='img/service-icon/box.png') }}" alt="Service 3">
+		        			<h3>Any Question?</h3>
+		        			<p>You can ask question here.</p>
+		        			<a href="#" class="btn">Read more</a>
+		        		</div>
+	        		</div>
+	        	</div>
+	        </div>
+	    </div>
+	    <!-- End Services -->
+
+		<!-- Call to Action Bar -->
+	    <div class="section section-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="calltoaction-wrapper">
+							<h3>Want to test our Encoder?</h3> <a href="/upload" class="btn btn-orange">Click here!</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Call to Action Bar -->
+
+		
+
+		<!-- Our Clients -->
+	    <div class="section">
+	    	<div class="container">
+	    		<h2>Our Clients</h2>
+				<div class="clients-logo-wrapper text-center row">
+					<div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{{ url_for('.static',filename='img/logos/long.png') }}" alt="Startimes"></a></div>
+					
+					<div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{{ url_for('.static',filename='img/logos/dell.png') }}" alt="Dell"></a></div>
+					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="{{ url_for('.static',filename='img/logos/Intel.png') }}" alt="Intel"></a></div>
+					<div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{{ url_for('.static',filename='img/logos/kontron.png') }}" alt="Kontron"></a></div>
+				</div>
+			</div>
+	    </div>
+	    <!-- End Our Clients -->
+	    {% endblock %}
+	    <!-- Footer -->
+	    <div class="footer">
+	    	<div class="container">
+		    	<div class="row">
+		    		<div class="col-footer col-md-3 col-xs-6">
+		    			<h3>Our Latest Work</h3>
+		    			<!--div class="portfolio-item">
+							<div class="portfolio-image">
+								<a href="page-portfolio-item.html"><img src="img/portfolio6.jpg" alt="Project Name"></a>
+							</div>
+						</div-->
+		    		</div>
+		    		<div class="col-footer col-md-3 col-xs-6">
+		    			<h3>Navigate</h3>
+		    			<!--ul class="no-list-style footer-navigate-section">
+		    				<li><a href="page-blog-posts.html">Blog</a></li>
+		    				<li><a href="page-portfolio-3-columns-2.html">Portfolio</a></li>
+		    				<li><a href="page-products-3-columns.html">eShop</a></li>
+		    				<li><a href="page-services-3-columns.html">Services</a></li>
+		    				<li><a href="page-pricing.html">Pricing</a></li>
+		    				<li><a href="page-faq.html">FAQ</a></li>
+		    			</ul-->
+		    		</div>
+		    		
+		    		<div class="col-footer col-md-4 col-xs-6">
+		    			<h3>Contacts</h3>
+		    			<p class="contact-us-details">
+	        				<b>Address:</b> Beijing Tsinghua Yuan Offset Printing Factory B03, Haidian, Beijing, China<br/>
+	        				<b>Phone:</b> +86 18507126543<br/>
+	        				<b>Fax:</b> --- <br/>
+	        				<b>Email:</b> <a href="mailto:gujiawen000@gmail.com">gujiawen000@gmail.com</a>
+	        			</p>
+		    		</div>
+		    		<div class="col-footer col-md-2 col-xs-6">
+		    			<h3>Stay Connected</h3>
+		    			<ul class="footer-stay-connected no-list-style">
+		    				<li><a href="#" class="facebook"></a></li>
+		    				<li><a href="#" class="twitter"></a></li>
+		    				<li><a href="#" class="googleplus"></a></li>
+		    			</ul>
+		    		</div>
+		    	</div>
+		    	<div class="row">
+		    		<div class="col-md-12">
+		    			<div class="footer-copyright">&copy; 2015 MediaLab. All rights reserved.</div>
+		    		</div>
+		    	</div>
+		    </div>
+	    </div>
+
+        <!-- Javascripts -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ url_for('.static',filename='js/jquery-1.9.1.min.js') }}"><\/script>')</script>
+        <script src="{{ url_for('.static',filename='js/bootstrap.min.js') }}"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+        <script src="{{ url_for('.static',filename='js/jquery.fitvids.js') }}"></script>
+        <script src="{{ url_for('.static',filename='js/jquery.sequence-min.js') }}"></script>
+        <script src="{{ url_for('.static',filename='js/jquery.bxslider.js') }}"></script>
+        <script src="{{ url_for('.static',filename='js/main-menu.js') }}"></script>
+        <script src="{{ url_for('.static',filename='js/template.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
