@@ -1,0 +1,479 @@
+{% extends "base.html" %}
+{% block navbar %}
+<!-- Navigation & Logo-->
+<div class="mainmenu-wrapper">
+    <div class="container">
+        <div class="menuextras">
+            <div class="extras">
+                <ul>
+                    <!--li><a href="page-login.html">Login</a></li-->
+                </ul>
+            </div>
+        </div>
+        <nav id="mainmenu" class="mainmenu">
+            <ul>
+                <li class="logo-wrapper"><a href="/"><img src="{{ url_for('.static',filename='img/logo.png') }}" alt="MediaLab"></a></li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/">Features</a>
+                </li>
+                <li>
+                    <a href="/">Product</a>
+                </li>
+                <li>
+                    <a href="/Contact">Contact us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Specifications</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:ËÎÌå;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:³£¹æ;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:ËÎÌå;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl65
+	{mso-style-parent:style0;
+	border-top:.5pt solid white;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;}
+.xl66
+	{mso-style-parent:style0;
+	border:.5pt solid white;}
+.xl67
+	{mso-style-parent:style0;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;}
+.xl68
+	{mso-style-parent:style0;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	vertical-align:middle;
+	border:.5pt solid white;
+	background:#CBE6FF;
+	mso-pattern:black none;}
+.xl69
+	{mso-style-parent:style0;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	vertical-align:middle;
+	border:.5pt solid white;
+	background:#F4F2F2;
+	mso-pattern:black none;}
+.xl70
+	{mso-style-parent:style0;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	vertical-align:middle;
+	border:.5pt solid white;
+	background:#F4F2F2;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl71
+	{mso-style-parent:style0;
+	color:white;
+	font-size:14.0pt;
+	font-weight:700;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid white;
+	background:#2F75B5;
+	mso-pattern:black none;}
+.xl72
+	{mso-style-parent:style0;
+	color:white;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid white;
+	background:#2F75B5;
+	mso-pattern:black none;}
+.xl73
+	{mso-style-parent:style0;
+	color:white;
+	font-size:14.0pt;
+	font-weight:700;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:middle;
+	border-top:.5pt solid white;
+	border-right:none;
+	border-bottom:.5pt solid white;
+	border-left:.5pt solid white;
+	background:#2F75B5;
+	mso-pattern:black none;}
+.xl74
+	{mso-style-parent:style0;
+	color:white;
+	font-size:14.0pt;
+	font-weight:700;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:middle;
+	border-top:.5pt solid white;
+	border-right:.5pt solid white;
+	border-bottom:.5pt solid white;
+	border-left:none;
+	background:#2F75B5;
+	mso-pattern:black none;}
+.xl75
+	{mso-style-parent:style0;
+	text-align:center;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid white;
+	border-left:none;}
+.xl76
+	{mso-style-parent:style0;
+	color:white;
+	font-size:26.0pt;
+	font-weight:700;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:middle;
+	border-top:.5pt solid white;
+	border-right:.5pt solid white;
+	border-bottom:.5pt solid white;
+	border-left:none;
+	background:#2F75B5;
+	mso-pattern:black none;}
+.xl77
+	{mso-style-parent:style0;
+	color:white;
+	font-size:26.0pt;
+	font-weight:700;
+	font-family:"Times New Roman";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:middle;
+	border-top:.5pt solid white;
+	border-right:none;
+	border-bottom:.5pt solid white;
+	border-left:.5pt solid white;
+	background:#2F75B5;
+	mso-pattern:black none;
+	white-space:normal;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:ËÎÌå;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;
+	mso-char-type:none;
+	display:none;}
+-->
+</style>
+
+<table border=0 cellpadding=0 cellspacing=0 width=854 style='border-collapse:
+ collapse;table-layout:fixed;width:640pt'>
+ <col width=149 style='mso-width-source:userset;mso-width-alt:4778;width:112pt'>
+ <col width=444 style='mso-width-source:userset;mso-width-alt:14208;width:333pt'>
+ <col width=87 span=3 style='mso-width-source:userset;mso-width-alt:2773;
+ width:65pt'>
+ <tr height=81 style='mso-height-source:userset;height:61.0pt'>
+  <td colspan=2 height=81 class=xl77 width=593 style='border-right:.5pt solid white;
+  height:61.0pt;width:445pt'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>Live Encoder <br>
+  <span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>Transcoder Specification</td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td colspan=2 height=20 class=xl75 style='height:15.0pt'>¡¡</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=28 style='mso-height-source:userset;height:21.0pt'>
+  <td colspan=2 height=28 class=xl73 style='border-right:.5pt solid white;
+  height:21.0pt'><span style='mso-spacerun:yes'>&nbsp;</span>Input</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Input Type</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>SDI, HDMI,Redundant IP inputs</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=43 style='height:32.0pt'>
+  <td height=43 class=xl68 style='height:32.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Protocol</td>
+  <td class=xl70 width=444 style='border-top:none;border-left:none;width:333pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>MPEG-2 TS up to 60Mbps over IP<br>
+  <span style='mso-spacerun:yes'>&nbsp;</span>H.264 TS up to 30Mbps over IP</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=43 style='height:32.0pt'>
+  <td height=43 class=xl68 style='height:32.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Codecs</td>
+  <td class=xl70 width=444 style='border-top:none;border-left:none;width:333pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Video: MPEG-2 SD/HD/UHD, MPEG-4
+  SD/HD/UHD<br>
+  <span style='mso-spacerun:yes'>&nbsp;</span>Audio: MPEG-1 Layer II, AC3,
+  E-AC3, AAC, HE AAC</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.0pt'>
+  <td colspan=2 height=27 class=xl71 style='height:20.0pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Video Encoding</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Video Codec</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>HEVC Main profile</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Data Rate</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Up to 20Mbps</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Rate Control</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>CBR/VBR/ABR with GOP alignment for
+  adaptive bitrate formats</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Resolutions</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Up to 4Kp</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Multistream Output</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ABR</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.0pt'>
+  <td colspan=2 height=27 class=xl71 style='height:20.0pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Audio Encoding</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+  <td class=xl65>¡¡</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Audio Channels</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Up to 2 stereo pairs</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Audio Encoding</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>MPEG-1 Layer II, AC3, E-AC3, AAC, HE
+  AAC</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Pass-Through</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>MPEG-1 Layer II, AC3, E-AC3, AAC, HE
+  AAC</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Data Rate</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Up to 512kbps</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.0pt'>
+  <td colspan=2 height=27 class=xl71 style='height:20.0pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Monitoring and Control</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Control Interface</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>One 100Mbps IP control port</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Control Protocols</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>SNMP V2</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Scalability</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Support scaling from a single-server to
+  hundreds of servers</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>High Availability</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Automated load balancing,
+  fault-tolerance and failover</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.0pt'>
+  <td colspan=2 height=27 class=xl71 style='height:20.0pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Output</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Output Type</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Redundant IP outputs</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+  <td class=xl66>¡¡</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Protocol</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>TS</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.0pt'>
+  <td colspan=2 height=27 class=xl71 style='height:20.0pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Hardware Platform</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Hardware Spec</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Intel based, 1 RU</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.0pt'>
+  <td colspan=2 height=27 class=xl71 style='height:20.0pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>Performance</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>HEVC: 4K 60fps</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>1~2 stream(s)</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>HEVC: 4K 30fps</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>2~4 streams</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl68 style='height:16.0pt;border-top:none'>HEVC: 1080P
+  30fps</td>
+  <td class=xl69 style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>8~16 streams</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl67 style='height:16.0pt'></td>
+  <td class=xl67></td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+</table>
+
+{% endblock %}

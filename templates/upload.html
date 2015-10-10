@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+<<<<<<< Updated upstream
+=======
+{% import "bootstrap/wtf.html" as wtf %}
+>>>>>>> Stashed changes
 {% block navbar %}
 <!-- Navigation & Logo-->
 <div class="mainmenu-wrapper">
@@ -51,17 +55,17 @@
 						<div class="form-group">
         				 	<label for="restore-email"><i class="icon-envelope"></i> <b>Upload file</b></label>
         				 	<p class="help-block">In this page, you can upload your video clips. And we will send our encoded file to your emailbox. Please notice that file MUST be H.264 contents, or it will not work.</p>
-        				 	<input type=file name=file>
 						</div>
+                        {{ wtf.quick_form(form) }} 
+                        <!--label for="Name" class="col-sm-2 control-label"><b>Email</b></label>
+                        <div class="col-sm-8">
+                        <input class="form-control" id="Name" type="text" placeholder="">
+                        </div>
                         <div class="form-group">
-                            <label for="Name" class="col-sm-2 control-label"><b>Email</b></label>
-                            <div class="col-sm-8">
-                                <input class="form-control" id="Name" type="text" placeholder="">
-                            </div>
                             <div class="clearfix"></div>
 							<input type=submit class="btn pull-right" Value=Upload>
 							<div class="clearfix"></div>
-						</div>
+						</div-->
 					</form>
             	</div>
 			</div>

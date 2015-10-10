@@ -9,24 +9,26 @@ from flask.ext.bootstrap import Bootstrap
 from flask.ext.moment import Moment
 from flask.ext.wtf import Form
 from wtforms import StringField, SubmitField
-from wtforms.validators import Required
+from wtforms.validators import Required, Email
+from flask_wtf.file import FileField, FileAllowed, FileRequired
 
 UPLOAD_FOLDER = 'static/Uploads'
-ALLOWED_EXTENSIONS = set(['ts', 'mp4', 'h264', 'mpeg', 'avi', 'mov', 'mkv','3gp','vob'])
+INFO_FOLDER = 'static/info.txt'
+ALLOWED_EXTENSIONS = set(['pdf','flv','ts', 'mp4', 'h264', 'mpeg', 'avi', 'mov', 'mkv','3gp','vob'])
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 manager = Manager(app)
-
+bootstrap = Bootstrap(app)
 def allowed_file(filename):
    return '.' in filename and \
        filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 class NameForm(Form):
-   name = StringField('What is your name?', validators=[Required()])
-   submit = SubmitField('Submit')
-
+    uploadfile = FileField('', validators=[FileRequired(), FileAllowed(['pdf','flv','ts', 'mp4', 'h264', 'mpeg', 'avi', 'mov', 'mkv','3gp','vob'], 'Please notice that')])
+    email = StringField('Please enter your email', validators = [Required(), Email()])
+    submit = SubmitField('Submit')
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -56,13 +58,19 @@ def success():
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
-   if request.method == 'POST':
-       file = request.files['file']
-       if file and allowed_file(file.filename):
-           filename = secure_filename(file.filename)
-           file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-           return redirect(url_for('index'))
-   return render_template('upload.html')
+    email = None
+    form = NameForm()
+    filename = None
+    if request.method == 'POST' and form.validate_on_submit():
+        email = form.email.data
+        form.email.data = ''
+        filename = secure_filename(form.uploadfile.data.filename)
+        fo = open(INFO_FOLDER, 'aw+')
+        fo.write(filename+':'+email+'\n')
+        fo.close()
+        form.uploadfile.data.save(os.path.join(app.config['UPLOAD_FOLDER'], filename),buffer_size=16384000)
+        return redirect(url_for('index'))
+    return render_template('upload.html', form=form)
     
 
 if __name__ == '__main__':
