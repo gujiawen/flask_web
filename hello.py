@@ -2,7 +2,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 import os
-from flask import Flask, render_template, session, redirect, url_for, flash, request
+from flask import Flask, render_template, session, redirect, url_for, flash, request, send_from_directory
 from werkzeug import secure_filename
 from flask.ext.script import Manager
 from flask.ext.bootstrap import Bootstrap
@@ -52,9 +52,9 @@ def features():
 def contact():
     return render_template('contact.html')
 
-@app.route('/download')
-def success():
-    return render_template('download.html')
+@app.route('/events')
+def events():
+    return render_template('events.html')
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
@@ -71,7 +71,10 @@ def upload_file():
         form.uploadfile.data.save(os.path.join(app.config['UPLOAD_FOLDER'], filename),buffer_size=16384000)
         return redirect(url_for('index'))
     return render_template('upload.html', form=form)
-    
+
+@app.route('/download/<filename>')
+def download(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'],filename)
 
 if __name__ == '__main__':
     manager.run()
